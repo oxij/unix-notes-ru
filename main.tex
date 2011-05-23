@@ -1,0 +1,133 @@
+\documentclass{report}
+
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[TS1,T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{color}
+\usepackage{fullpage}
+\usepackage{indentfirst}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Теорема}[chapter]
+\newtheorem{definition}[theorem]{Определение}
+\newtheorem{algorithm}[theorem]{Алгоритм}
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Листинг}
+
+\lstnewenvironment{code}[2]
+{
+\lstset{ float=htbp }
+\lstset{ language={#1}, label={l:#2}, caption={#2} }
+}{}
+
+\lstnewenvironment{ccode}[1]
+{
+\lstset{ float=htbp }
+\lstset{ language={C}, label={l:#1}, caption={#1} }
+}{}
+
+\lstnewenvironment{asmcode}[1]
+{
+\lstset{ float=htbp }
+\lstset{ language={sh}, label={l:#1}, caption={#1} }
+}{}
+
+\lstnewenvironment{stdout}[2]
+{
+\lstset{ float=htbp }
+\lstset{ language={sh}, label={l:#1}, caption={#2} }
+}{}
+
+%\newenvironment{stdout}[1]
+%{
+%\begin{verbatim}
+%}{
+%\end{verbatim}
+%}
+
+\usepackage{graphicx}
+\def\drawfigure#1#2#3{
+    \begin{figure}[htbp]
+        \centerline{
+            \includegraphics{#1}
+        }
+        \caption{#3}
+        \label{f:#2}
+    \end{figure}
+}
+\def\drawfigurex#1#2#3#4#5{
+    \begin{figure}[#4]
+        \centerline{
+            \includegraphics[#5]{#1}
+        }
+        \caption{#3}
+        \label{f:#2}
+    \end{figure}
+}
+
+\usepackage{url}
+%% Define a new 'leo' style for the package that will use a smaller font.
+%\makeatletter
+%\def\url@leostyle{%
+%\@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+%\makeatother
+%% Now actually use the newly defined style.
+%\urlstyle{leo}
+
+%\usepackage{color}
+%\usepackage{alltt}
+%\usepackage{scrpage2}
+%\pagestyle{scrheadings}
+
+\title{Lecture Notes On Operating Systems Course}
+\author{Jan Malakhovski}
+
+%\setheadtopline{2pt}
+%\setheadsepline{.3pt}
+
+\begin{document}
+\lstset{ breaklines=false
+       , extendedchars=true
+       , frame=tb
+       , basicstyle=\fontsize{10pt}{10pt}\selectfont
+       , commentstyle=\it\fontsize{10pt}{10pt}\selectfont
+       , stringstyle=\bf }
+
+%\pagestyle{title}
+\begin{titlepage}
+    \begin{center}
+        ~
+
+        \vspace{5cm}
+
+        {\Huge Ян Малаховски}
+
+        \vspace{2cm}
+
+        \vbox{\huge Конспект лекций по курсу\\ \Huge <<Операционные системы>>}
+
+        \vfill
+        
+        {\large version \input{VERSION}\\ compiled \today}
+    \end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+
+\newpage
+\include{intro}
+
+\part{Первый семестр}
+Тут когда-нибудь будут лекции по первому семестру. Или не будут.
+
+\part{Второй семестр}
+\include{part-2-01}
+%\include{part-2-02}
+%\include{s03}
+%\include{s04}
+%\include{s05}
+%\include{s06}
+\end{document}
