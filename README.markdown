@@ -2,7 +2,7 @@ Lecture Notes On Operating Systems Course
 =========================================
 
 Here are some unfinished notes on operating systems course
-I've taught in [SPbSU ITMO](www.ifmo.ru).
+I've taught in [SPbSU ITMO](http://www.ifmo.ru/).
 Everything except this README is in russian language.
 
 Internet had already covered most of topics present in course.
