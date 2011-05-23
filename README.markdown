@@ -21,6 +21,8 @@ Topics that should be covered, but I'm too lazy:
 This work is licensed under a [Creative Commons Attribution-NonCommercial 3.0
 Unported License](http://creativecommons.org/licenses/by-nc/3.0/).
 
+Compiled pdfs are in ``compiled'' directory.
+
 Конспект лекций по курсу «Операционные системы»
 ===============================================
 
@@ -44,3 +46,5 @@ Unported License](http://creativecommons.org/licenses/by-nc/3.0/).
 
 Работа выпущена в мир под лицензией [Creative Commons Attribution-NonCommercial
 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0/).
+
+Скомпилированные pdfки доступны в директории «compiled» этого репозитория.
