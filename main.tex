@@ -19,25 +19,25 @@
 \lstnewenvironment{code}[2]
 {
 \lstset{ float=htbp }
-\lstset{ language={#1}, label={l:#2}, caption={#2} }
+\lstset{ language={#1}, label={lst:#2}, caption={#2} }
 }{}
 
 \lstnewenvironment{ccode}[1]
 {
 \lstset{ float=htbp }
-\lstset{ language={C}, label={l:#1}, caption={#1} }
+\lstset{ language={C}, label={lst:#1}, caption={#1} }
 }{}
 
 \lstnewenvironment{asmcode}[1]
 {
 \lstset{ float=htbp }
-\lstset{ language={sh}, label={l:#1}, caption={#1} }
+\lstset{ language={sh}, label={lst:#1}, caption={#1} }
 }{}
 
 \lstnewenvironment{stdout}[2]
 {
 \lstset{ float=htbp }
-\lstset{ language={sh}, label={l:#1}, caption={#2} }
+\lstset{ language={sh}, label={lst:#1}, caption={#2} }
 }{}
 
 %\newenvironment{stdout}[1]
@@ -48,13 +48,15 @@
 %}
 
 \usepackage{graphicx}
+%\ifpdf\usepackage{epstopdf}\fi
+
 \def\drawfigure#1#2#3{
     \begin{figure}[htbp]
         \centerline{
             \includegraphics{#1}
         }
         \caption{#3}
-        \label{f:#2}
+        \label{fig:#2}
     \end{figure}
 }
 \def\drawfigurex#1#2#3#4#5{
@@ -63,18 +65,24 @@
             \includegraphics[#5]{#1}
         }
         \caption{#3}
-        \label{f:#2}
+        \label{fig:#2}
     \end{figure}
 }
+\usepackage{emp}
+
+\def\drawfigureemp#1#2{
+\begin{figure}[!htbp]
+  \centerline{\empuse{#1}}
+  \caption{\label{fig:#1} {#2}}
+\end{figure}
+}
+
+\def\reffig#1{рис.~\ref{fig:#1}}
+\def\reflst#1{\ref{lst:#1}}
+\def\refsec#1{разд.~\ref{sec:#1}}
+\def\refalg#1{\ref{alg:#1}}
 
 \usepackage{url}
-%% Define a new 'leo' style for the package that will use a smaller font.
-%\makeatletter
-%\def\url@leostyle{%
-%\@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
-%\makeatother
-%% Now actually use the newly defined style.
-%\urlstyle{leo}
 
 %\usepackage{color}
 %\usepackage{alltt}
@@ -94,6 +102,11 @@
        , basicstyle=\fontsize{10pt}{10pt}\selectfont
        , commentstyle=\it\fontsize{10pt}{10pt}\selectfont
        , stringstyle=\bf }
+
+\begin{empfile}[figures]
+\begin{empcmds}
+    input boxes;
+\end{empcmds}
 
 %\pagestyle{title}
 \begin{titlepage}
@@ -125,9 +138,11 @@
 
 \part{Второй семестр}
 \include{part-2-01}
-%\include{part-2-02}
+\include{part-2-02}
 %\include{s03}
 %\include{s04}
 %\include{s05}
 %\include{s06}
+
+\end{empfile}
 \end{document}
